@@ -1,0 +1,245 @@
+
+.scene {
+    perspective: 600px;
+
+}
+.container-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-rows: 260px;
+    gap: 10px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform .5s ease-in-out;
+    transform-style: preserve-3d;
+    /* transform-origin: center right; */
+}
+
+.card-front, .card-back {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    display: grid;
+    place-items: center;
+}
+
+.card-back {
+    background-color: blue;
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    text-align: center;
+    background-color: red;
+}
+
+.is-flipped {
+    /* transform: translateX(-100%) rotateY(-180deg); */
+    transform: rotateY(180deg);
+}
+
+
+/* 3D cube style */
+
+
+.container-cube .scene {
+    width: 200px;
+    height: 200px;
+    perspective: 500px;
+}
+
+.container-cube .cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px);
+    transition: transform 1s;
+    
+}
+
+.container-cube .face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    color: white;
+    opacity: .8;
+}
+
+.container-cube .front {
+    background-color: rgb(5, 5, 70);
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.container-cube .back {
+    background-color: rgb(77, 7, 7);
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+ 
+.container-cube .right {
+    background-color: rgb(3, 49, 3);
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.container-cube .left {
+    background-color: rgb(0, 89, 89);
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.container-cube .top {
+    background-color: rgb(95, 10, 25);
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.container-cube .bottom {
+    background-color: rgb(118, 4, 120);
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.container-cube .show-front {
+    transform: translateZ(-100px) rotateY(0);
+}
+
+.container-cube .show-back {
+    transform: translateZ(-100px) rotateY(-180deg);
+}
+
+.container-cube .show-right {
+    transform: translateZ(-100px) rotateY(-90deg);
+}
+
+.container-cube .show-left {
+    transform: translateZ(-100px) rotateY(90deg);
+}
+
+.container-cube .show-top {
+    transform: translateZ(-100px) rotateX(-90deg);
+}
+
+.container-cube .show-bottom {
+    transform: translateZ(-100px) rotateX(90deg);
+}
+
+
+/* 3d carousel effect */
+
+/* 
+body {
+    height: 100vh;
+    display: flex;
+    gap: 350px;
+    justify-content: center;
+    align-items: center;
+} */
+
+.container-carousel .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 10px;
+}
+.container-carousel .scene {
+    width: 210px;
+    height: 140px;
+    position:relative;
+    perspective: 1000px;
+}
+
+.container-carousel .carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform .5s ease-out;
+}
+
+.container-carousel .cell {
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    border: 1px solid black;
+    opacity: 0.8;
+    position: absolute;
+    width: 190px;
+    height: 120px;
+    left: 10px;
+    top: 10px;
+}
+
+
+/* This carousel has 9 cells. If each cell gets an equal distribution on the carousel, 
+each panel would be rotated 40 degrees from the next ( 360 / 9 ). */
+.container-carousel .cell:nth-child(1) {
+    background-color: #FFFFFF;
+    /* transform: rotateY(0deg) translateZ(288px); */
+}
+
+.container-carousel .cell:nth-child(2) {
+    background-color:  #F0F0F0;
+}
+
+.container-carousel .cell:nth-child(3) {
+    background-color: #FFFFF0;
+}
+
+.container-carousel .cell:nth-child(4) {
+    background-color: #F5F5DC;
+}
+
+.container-carousel .cell:nth-child(5) {
+    background-color: #FFFFE0;
+}
+
+.container-carousel .cell:nth-child(6) {
+    background-color: #F5FFFA;
+}
+
+.container-carousel .cell:nth-child(7) {
+    background-color: #FFF0F5;
+}
+
+.container-carousel .cell:nth-child(8) {
+    background-color: #F0FFF0;
+}
+
+.container-carousel .cell:nth-child(9) {
+    background-color: #F0F8FF;
+}
+
+
+.container-card {
+    margin: 5em 5em;
+}
+
+.container-cube {
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    margin: 5em 5em;
+}
+.container-cube .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container-carousel {
+    margin: 20em 20em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15em;
+}
